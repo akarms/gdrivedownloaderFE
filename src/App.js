@@ -13,15 +13,15 @@ function App() {
    <AuthProvider>
       <Router>
         <Routes>
-          <Route path="/" element={<GoogleLogin />} />
+          <Route path="/gdrivedownloaderFE" element={<GoogleLogin />} />
           <Route
-            path="/home"
+            path="/gdrivedownloaderFE/home"
             element={
               <ProtectedRoute>
                 <Home />
               </ProtectedRoute>
             }
-          />          <Route path="/oauth2callback" element={<OAuth2Callback />} />
+          />          <Route path="/gdrivedownloaderFE/oauth2callback" element={<OAuth2Callback />} />
         </Routes>
       </Router>
     </AuthProvider>
