@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+// App.js
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import GoogleLogin from './components/googlelogin/GoogleLogin';
+import Home from './home';
+import OAuth2Callback from './OAuth2Callback';
+import { AuthProvider } from './AuthContext';
+import ProtectedRoute from './ProtectedRoute';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <AuthProvider>
+      <Router>
+        <Routes>
+          <Route path="/" element={<GoogleLogin />} />
+          <Route
+            path="/home"
+            element={
+              <ProtectedRoute>
+                <Home />
+              </ProtectedRoute>
+            }
+          />          <Route path="/oauth2callback" element={<OAuth2Callback />} />
+        </Routes>
+      </Router>
+    </AuthProvider>
   );
 }
 
