@@ -18,7 +18,7 @@ function Home() {
   // Function to fetch files
   const fetchFiles = async (accessToken) => {
     try {
-      const response = await fetch('http://138.2.87.100:5000/listFiles', {
+      const response = await fetch('https://be.akarms.tech/listFiles', {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${accessToken}`
@@ -40,7 +40,7 @@ function Home() {
   // Function to fetch drive information
   const fetchDriveInfo = async (accessToken) => {
     try {
-      const response = await fetch('http://138.2.87.100:5000/drive-info', {
+      const response = await fetch('https://be.akarms.tech/drive-info', {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${accessToken}`
@@ -93,7 +93,7 @@ function Home() {
 
     try {
       setDownloading(true);
-      const response = await fetch('http://138.2.87.100:5000/download', {
+      const response = await fetch('https://be.akarms.tech/download', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
