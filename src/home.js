@@ -80,7 +80,7 @@ function Home() {
     try {
       await logout();
       localStorage.removeItem('accessToken');
-      navigate('/gdrivedownloaderFE');
+      navigate('/');
     } catch (error) {
       console.error('Error during logout:', error);
     }

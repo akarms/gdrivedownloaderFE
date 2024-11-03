@@ -26,14 +26,14 @@ function OAuth2Callback() {
 
 
                         // Redirect to a different page after successful authentication
-                        navigate('/gdrivedownloaderFE/home');
+                        navigate('/home');
                     } else {
                         console.error("Error exchanging code for tokens:", data);
                     }
                 })
                 .catch(error => {
                     console.error("Error:", error);
-                    navigate('/gdrivedownloaderFE');
+                    navigate('/');
                 });
         }
     }, [navigate]);
