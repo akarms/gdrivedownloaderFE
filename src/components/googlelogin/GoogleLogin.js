@@ -4,7 +4,7 @@ import { useAuth } from '../../AuthContext';
 
 
 const CLIENT_ID = "991499326705-d32po3qov8tsb32uju97ejaj6nmrn29e.apps.googleusercontent.com";
-const REDIRECT_URI = "http://localhost:3000/oauth2callback"; // or your production URL
+const REDIRECT_URI = "https://akarms.tech/oauth2callback"; // or your production URL
 const scopes = ['https://www.googleapis.com/auth/drive.file'];
 
 
