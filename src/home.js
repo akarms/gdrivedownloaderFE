@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import { useAuth } from './AuthContext';
 import { Button, Container, Form, Card, Alert, Spinner, Row, Col } from 'react-bootstrap';
 
@@ -30,7 +31,6 @@ function Home() {
 
       const filesData = await response.json();
       setFiles(filesData);
-      console.log(files)
     } catch (error) {
       console.error('Error fetching files from backend:', error);
       setError('Error fetching files from backend');
@@ -67,21 +67,14 @@ function Home() {
         setError('Access token not found. Please log in again.');
         return;
       }
-  
+
       setLoading(true);
-      try {
-        await Promise.all([fetchFiles(accessToken), fetchDriveInfo(accessToken)]);
-      } catch (error) {
-        setError('An error occurred while fetching data.');
-        console.error(error);
-      } finally {
-        setLoading(false);
-      }
+      await Promise.all([fetchFiles(accessToken), fetchDriveInfo(accessToken)]);
+      setLoading(false);
     };
-  
+
     fetchData();
-  }, [fetchFiles, fetchDriveInfo]);
-  
+  }, []);
 
   const handleLogout = async () => {
     try {

@@ -4,11 +4,11 @@ import { useAuth } from '../../AuthContext';
 
 
 const CLIENT_ID = "991499326705-d32po3qov8tsb32uju97ejaj6nmrn29e.apps.googleusercontent.com";
-const REDIRECT_URL = "https://akarmsa.github.io/gdrivedownloaderFE/oauth2callback"; 
+const REDIRECT_URI = "http://localhost:3000/oauth2callback"; // or your production URL
 const scopes = ['https://www.googleapis.com/auth/drive.file'];
 
 
-const authUrl = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URL}&response_type=code&scope=${encodeURIComponent(scopes)}&access_type=offline&prompt=consent`;
+const authUrl = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=code&scope=${encodeURIComponent(scopes)}&access_type=offline&prompt=consent`;
 
 
 

@@ -6,7 +6,7 @@ function ProtectedRoute({ children }) {
   const { isAuthenticated } = useAuth();
 
   if (!isAuthenticated) {
-    return <Navigate to="/gdrivedownloaderFE" replace />;
+    return <Navigate to="/" replace />;
   }
 
   return children;
