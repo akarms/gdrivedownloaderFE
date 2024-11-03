@@ -67,14 +67,21 @@ function Home() {
         setError('Access token not found. Please log in again.');
         return;
       }
-
+  
       setLoading(true);
-      await Promise.all([fetchFiles(accessToken), fetchDriveInfo(accessToken)]);
-      setLoading(false);
+      try {
+        await Promise.all([fetchFiles(accessToken), fetchDriveInfo(accessToken)]);
+      } catch (error) {
+        setError('An error occurred while fetching data.');
+        console.error(error);
+      } finally {
+        setLoading(false);
+      }
     };
-
+  
     fetchData();
-  }, []);
+  }, [fetchFiles, fetchDriveInfo]);
+  
 
   const handleLogout = async () => {
     try {
