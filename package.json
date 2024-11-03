@@ -2,7 +2,6 @@
   "name": "gdrive-youtube-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://akarmsa.github.io/gdrivedownloaderFE",
   "dependencies": {
     "@react-oauth/google": "^0.12.1",
     "@testing-library/jest-dom": "^5.17.0",
