@@ -12,7 +12,7 @@ function OAuth2Callback() {
 
         if (code) {
             // Send the code to your backend to exchange it for tokens
-            fetch('https://be.akarms.tech//oauth2callback', {
+            fetch('https://be.akarms.tech/oauth2callback', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ code })
