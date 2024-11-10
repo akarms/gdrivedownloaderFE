@@ -6,6 +6,7 @@ import Home from './home';
 import OAuth2Callback from './OAuth2Callback';
 import { AuthProvider } from './AuthContext';
 import ProtectedRoute from './ProtectedRoute';
+import {TorrentDownloader} from './pages/TorrentDownloader'
 
 
 function App() {
@@ -14,14 +15,9 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<GoogleLogin />} />
-          <Route
-            path="/home"
-            element={
-              <ProtectedRoute>
-                <Home />
-              </ProtectedRoute>
-            }
-          />          <Route path="/oauth2callback" element={<OAuth2Callback />} />
+          <Route path="/home" element={ <ProtectedRoute> <Home /> </ProtectedRoute> }/> 
+          <Route path="/oauth2callback" element={<OAuth2Callback />} />
+          <Route path='/torrentDownloader' element={<TorrentDownloader />} />
         </Routes>
       </Router>
     </AuthProvider>
