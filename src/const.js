@@ -3,9 +3,9 @@
 // export const TorrentDownload = "http://localhost:5000/torrent-download"
 
 
-export const ServerInfo = "http://138.2.87.100:5000/serverinfo"
-export const TorrentDownload = "http://138.2.87.100:5000/torrent-download"
-export const TorrentDownloadFileslist = "http://138.2.87.100:5000/serverfilesInfo"
-export const GetDownloadLinkOfTorrent = "http://138.2.87.100:5000/serverfileDownload"
-export const DeleteDownloadLink = "http://138.2.87.100:5000/serverfileDelete"
-export const StopTorrentDownload = "http://138.2.87.100:5000/stop-all-downloads"
+export const ServerInfo = "https://be.akarms.tech/serverinfo"
+export const TorrentDownload = "https://be.akarms.tech/torrent-download"
+export const TorrentDownloadFileslist = "https://be.akarms.tech/serverfilesInfo"
+export const GetDownloadLinkOfTorrent = "https://be.akarms.tech/serverfileDownload"
+export const DeleteDownloadLink = "https://be.akarms.tech/serverfileDelete"
+export const StopTorrentDownload = "https://be.akarms.tech/stop-all-downloads"
