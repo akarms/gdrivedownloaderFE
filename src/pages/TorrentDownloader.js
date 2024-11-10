@@ -15,8 +15,9 @@ function TorrentDownloader() {
     const [isDownloadStarted, setIsDownloadStarted] = useState(false);
 
     useEffect(() => {
-        const socket = new WebSocket('ws://138.2.87.100:5555');
-        
+      const socketProtocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+      const socket = new WebSocket(`${socketProtocol}//138.2.87.100:5555`);
+              
         socket.onopen = () => console.log('WebSocket connection established.');
         socket.onerror = (error) => console.error('WebSocket error:', error);
         socket.onmessage = (event) => {
